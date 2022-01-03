@@ -8,6 +8,8 @@ mongoose.connect('mongodb+srv://eme1394:13111994@piquanteopenclassroom.rcawi.mon
     useUnifiedTopology: true })
   .then(() => console.log('Connexion à MongoDB réussie !'))
   .catch(() => console.log('Connexion à MongoDB échouée !'));
+  
+  app.use(express.json());
 
   app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
