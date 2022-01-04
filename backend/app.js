@@ -2,8 +2,10 @@ const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
 const userRoutes = require('./routes/user');
+require('dotenv').config()
+let dataBase = process.env.DB_KEY
 
-mongoose.connect('mongodb+srv://eme1394:13111994@piquanteopenclassroom.rcawi.mongodb.net/PiquanteOpenClassRoom?retryWrites=true&w=majority',
+mongoose.connect(dataBase,
   { useNewUrlParser: true,
     useUnifiedTopology: true })
   .then(() => console.log('Connexion à MongoDB réussie !'))
