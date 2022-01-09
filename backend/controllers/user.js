@@ -1,5 +1,5 @@
 const bcrypt = require('bcrypt')
-const User = require('../models/User')
+const User = require('../models/user')
 const jwt = require('jsonwebtoken');
 require('dotenv').config()
 let token_key = process.env.TOKEN_KEY
