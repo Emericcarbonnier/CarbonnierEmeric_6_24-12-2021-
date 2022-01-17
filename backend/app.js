@@ -4,10 +4,13 @@ const app = express();
 const userRoutes = require('./routes/user');
 const sauceRoutes = require("./routes/sauce");
 const path = require('path');
-require('dotenv').config()
-let dataBase = process.env.DB_KEY
+require('dotenv').config();
 
-mongoose.connect(dataBase,
+
+const database = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@piquanteopenclassroom.rcawi.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`;
+
+
+mongoose.connect(database,
   { useNewUrlParser: true,
     useUnifiedTopology: true })
   .then(() => console.log('Connexion à MongoDB réussie !'))
